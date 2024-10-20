@@ -40,16 +40,22 @@
         .blur-effect {
 
 
-            width: 600px;
+            width: 1000px;
 
 
-            height: 200px;
+            height: 400px;
 
 
             background: rgba(255, 255, 255, 0.3);
 
 
             border-radius: 20px;
+
+
+            backdrop-filter: blur(10px);
+
+
+            -webkit-backdrop-filter: blur(10px);
 
 
             padding: 20px;
@@ -59,9 +65,6 @@
 
 
             font-size: 16px;
-
-
-            filter: url(#blur-filter);
 
 
         }
@@ -76,31 +79,10 @@
 <body>
 
 
-    <svg width="0" height="0">
-
-
-        <defs>
-
-
-            <filter id="blur-filter">
-
-
-                <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
-
-
-            </filter>
-
-
-        </defs>
-
-
-    </svg>
-
-
     <div class="blur-effect">
 
 
-        This is a demo of a blur effect using SVG filter.
+        This is a demo of a blur effect using backdrop-filter.
 
 
     </div>
