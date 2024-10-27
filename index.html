@@ -215,87 +215,90 @@ align-items: center;
 <p style="font-family: 'genshin';">
 	<font size="4">下面有个折叠框（打开看看！</font></p>
 	 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>折叠面板</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>菜鸟教程(runoob.com)</title>
+<style>
+/* 打开和关闭手风琴面板的样式 */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+ 
+/* 设置点击和鼠标移到选项上面时（悬停）的样式 */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+ 
+/* 为手风琴面板设计样式。 默认隐藏 */
+.panel {
+	border-radius:15px;
+  background:transparent;
+  padding: 0 18px;
+  
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+/* 设置 +、- 标志 */
+.accordion:after {
+  content: '\002B';  /* Unicode 字符 + 号 */
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+ 
+.active:after { 
+  content: "\2212";  /* Unicode 字符 - 号 */
+}
+</style>
 </head>
 <body>
-    <div class="accordion">
-        <div class="accordion-item">
-            <button class="accordion-btn">折叠项 1</button>
-            <div class="accordion-content">
-                <p>这是折叠项 1 的内容。</p>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <button class="accordion-btn">折叠项 2</button>
-            <div class="accordion-content">
-                <p>这是折叠项 2 的内容。</p>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <button class="accordion-btn">折叠项 3</button>
-            <div class="accordion-content">
-                <p>这是折叠项 3 的内容。</p>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+
+<h2>手风琴动画</h2>
+<p>电脑按钮显示或隐藏内容</p>
+
+<button class="accordion">Runoob 1</button>
+<div class="panel">
+  <p>菜鸟教程 -- 学的不仅是技术，更是梦想！！！</p>
+</div>
+ 
+<button class="accordion">Runoob 2</button>
+<div class="panel">
+  <p>菜鸟教程 -- 学的不仅是技术，更是梦想！！！</p>
+</div>
+ 
+<button class="accordion">Runoob 3</button>
+<div class="panel">
+  <p>菜鸟教程 -- 学的不仅是技术，更是梦想！！！</p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
 </body>
 </html>
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-}
-
-.accordion {
-    max-width: 400px;
-    margin: 20px auto;
-}
-
-.accordion-item {
-    border: 1px solid #ddd;
-    margin-bottom: 5px;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-}
-
-.accordion-btn {
-    background-color: #0077ff;
-    color: white;
-    padding: 10px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    cursor: pointer;
-}
-
-.accordion-content {
-    padding: 10px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-}
-// script.js
-const accordionItems = document.querySelectorAll('.accordion-item');
-
-accordionItems.forEach((item) => {
-    const button = item.querySelector('.accordion-btn');
-    const content = item.querySelector('.accordion-content');
-
-    button.addEventListener('click', () => {
-        item.classList.toggle('active');
-
-        if (item.classList.contains('active')) {
-            content.style.maxHeight = content.scrollHeight + 'px';
-        } else {
-            content.style.maxHeight = '0';
-        }
-    });
-});
