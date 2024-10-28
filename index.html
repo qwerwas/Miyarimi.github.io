@@ -102,54 +102,78 @@ align-items: center;
 
 
 </html>
-
-
-
-html {
-  --font-color: #fff;
-  --bg-color: rgba(255, 255, 255, 0.4);
+.btn-42,
+.btn-42 *,
+.btn-42 :after,
+.btn-42 :before,
+.btn-42:after,
+.btn-42:before {
+  border: 0 solid;
+  box-sizing: border-box;
 }
-
-button {
-  background-color: transparent;
-  border: none;
+.btn-42 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
   cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
 }
-
-button.radial-button {
+.btn-42:disabled {
+  cursor: default;
+}
+.btn-42:-moz-focusring {
+  outline: auto;
+}
+.btn-42 svg {
+  display: block;
+  vertical-align: middle;
+}
+.btn-42 [hidden] {
+  display: none;
+}
+.btn-42 {
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  -webkit-mask-image: none;
+  padding: 1rem 3rem;
   position: relative;
-  overflow: hidden;
-  z-index: 1;
-  border: 1px solid var(--font-color);
-  color: var(--font-color);
-  padding: 12px 40px;
+  text-transform: uppercase;
 }
-
-.radial-button::before {
-  content: '';
+.btn-42 span {
+  mix-blend-mode: difference;
+}
+.btn-42:before {
+  --thickness: 4px;
+  border: var(--thickness) solid #fff;
+  border-radius: 999px;
+  content: "";
+  inset: calc(var(--thickness) * -1);
+  opacity: 0;
+  pointer-events: none;
   position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  background-color: var(--bg-color);
-  transform-origin: center;
-  transform: translate3d(-50%, -50%, 0) scale(0, 0);
-  transition: transform 500ms ease-in-out;
+  transform: scale(1.3);
+  transition: transform 0.2s, opacity 0.2s;
+}
+.btn-42:hover:before {
+  opacity: 1;
+  transform: scale(1);
+}
+.btn-42:hover {
+  background-color: transparent;
 }
 
-.radial-button:hover::before {
-  transform: translate3d(-50%, -50%, 0) scale(15, 15);
-}
-<button className="radial-button"
-	onclick="window.location.href='https://space.bilibili.com/1376787360?spm_id_from=333.1007.0.0'"
-	class="button button1"><p style="font-family: 'genshin';">点击前往我的B站！！！
-	</p></button>
-<button 
-	onclick="window.location.href='https://osu.ppy.sh/users/34246155'"
-	class="button button2"><p style="font-family: 'genshin';">和我一起打osu吧！！</p></button>
+
 
 
 	<!DOCTYPE html>
