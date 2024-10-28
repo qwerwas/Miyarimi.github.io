@@ -105,20 +105,14 @@ align-items: center;
 
 
 
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-.button {
+html {
+  --font-color: #fff;
+  --bg-color: rgba(255, 255, 255, 0.4);
+}
+
+button {
+  background-color: transparent;
   border: none;
-  color: white;
-  padding: 8px 12px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
   cursor: pointer;
 }
 
@@ -149,24 +143,6 @@ button.radial-button {
 .radial-button:hover::before {
   transform: translate3d(-50%, -50%, 0) scale(15, 15);
 }
-
-
-.button2 {
-	border-radius:15px;
-  background:transparent;
-  color: black;
-  border: 2px solid #008CBA;
-}
-
-.button2:hover {
-  background-color: #008CBA;
-  color: white;
-}
-
-</style>
-</head>
-<body>
-
 <button className="radial-button"
 	onclick="window.location.href='https://space.bilibili.com/1376787360?spm_id_from=333.1007.0.0'"
 	class="button button1"><p style="font-family: 'genshin';">点击前往我的B站！！！
