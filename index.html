@@ -82,17 +82,21 @@ class="button button1"><p>点击前往我的网站！！
 <html>
    <head>
        <style type="text/css">
+	       body{
+		background: url("images/bg.jpg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -o-background-size: cover;                
+                background-size: cover; 
+		backdrop-filter: blur(10px);
+        width: 100%;
+	}
         .top{
 		font-size: 1rem;
     /* 设置宽度高度背景颜色 */
     height: auto; /*高度改为自动高度*/
     width:100%;
     margin-left: 0;
-    background: url("images/bg.jpg") no-repeat center center fixed;
-                -webkit-background-size: cover;
-                -o-background-size: cover;                
-                background-size: cover; 
-		backdrop-filter: blur(10px);
+   
         width: 100%;
     position: fixed; /*固定在顶部*/
     top: 0;/*离顶部的距离为0*/
